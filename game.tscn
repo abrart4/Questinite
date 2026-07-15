@@ -2,8 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://4i7m6313rrru" path="res://player.tscn" id="1_80nbo"]
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xx5pe"]
+
 [node name="Game" type="Node2D" unique_id=1871977962]
 
 [node name="player" parent="." unique_id=1322502798 instance=ExtResource("1_80nbo")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1728746391]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1513396832]
+position = Vector2(-1, 148)
+
+[node name="Platform" type="CollisionShape2D" parent="StaticBody2D" unique_id=2119312007]
+position = Vector2(1, 10)
+shape = SubResource("WorldBoundaryShape2D_xx5pe")
