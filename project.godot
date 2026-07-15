@@ -23,6 +23,7 @@ window/stretch/aspect="expand"
 [physics]
 
 3d/physics_engine="Jolt Physics"
+2d/default_gravity=3950.3940000000002
 
 [rendering]
 
