@@ -2,17 +2,37 @@
 
 [ext_resource type="PackedScene" uid="uid://4i7m6313rrru" path="res://player.tscn" id="1_80nbo"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xx5pe"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_80nbo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xx5pe"]
+size = Vector2(243, 88)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hugrs"]
+distance = 68.0
 
 [node name="Game" type="Node2D" unique_id=1871977962]
 
 [node name="player" parent="." unique_id=1322502798 instance=ExtResource("1_80nbo")]
+position = Vector2(1, 1)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1728746391]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1513396832]
-position = Vector2(-1, 148)
+position = Vector2(-1, 149)
+physics_material_override = SubResource("PhysicsMaterial_80nbo")
 
 [node name="Platform" type="CollisionShape2D" parent="StaticBody2D" unique_id=2119312007]
-position = Vector2(1, 10)
-shape = SubResource("WorldBoundaryShape2D_xx5pe")
+position = Vector2(13.5, 3)
+shape = SubResource("RectangleShape2D_xx5pe")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1805950948]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2" unique_id=225077191]
+position = Vector2(-369, 63)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_hugrs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=179081186]
+position = Vector2(381, 72)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_hugrs")
