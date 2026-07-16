@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://4i7m6313rrru" path="res://player.tscn" id="1_80nbo"]
 [ext_resource type="Script" uid="uid://d1lryykecgcd5" path="res://right_boundary.gd" id="2_feb5d"]
+[ext_resource type="PackedScene" uid="uid://dxbcbma613c10" path="res://schooll.tscn" id="3_feb5d"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xx5pe"]
 distance = 7.0
@@ -28,8 +29,9 @@ shape = SubResource("WorldBoundaryShape2D_xx5pe")
 script = ExtResource("2_feb5d")
 
 [node name="player" parent="." unique_id=1322502798 instance=ExtResource("1_80nbo")]
+z_index = 4096
 position = Vector2(1402, -302)
-scale = Vector2(1, 1)
+scale = Vector2(0.5, 0.5)
 
 [node name="Camera2D" type="Camera2D" parent="player" unique_id=505899989]
 position = Vector2(197.75, -39.5)
@@ -56,3 +58,7 @@ position = Vector2(3, 75)
 position = Vector2(-1033, -62)
 rotation = 1.5707964
 shape = SubResource("WorldBoundaryShape2D_cfi2p")
+
+[node name="School" parent="." unique_id=1499949400 instance=ExtResource("3_feb5d")]
+position = Vector2(-439, 79)
+scale = Vector2(2, 2)
