@@ -6,19 +6,28 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xx5pe"]
 size = Vector2(47, 48)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_xx5pe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_sipu7")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="School" type="Node2D" unique_id=1499949400]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1765543655]
-texture = ExtResource("1_sipu7")
-
-[node name="Area2D" type="Area2D" parent="." unique_id=1253640256]
+[node name="Door" type="Area2D" parent="." unique_id=1253640256]
 script = ExtResource("2_61lyk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=641575191]
+[node name="DoorShape" type="CollisionShape2D" parent="Door" unique_id=641575191]
 position = Vector2(-0.5, 67)
 shape = SubResource("RectangleShape2D_xx5pe")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=380993598]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=934842721]
+sprite_frames = SubResource("SpriteFrames_xx5pe")
 
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
+[connection signal="body_exited" from="Door" to="Door" method="_on_body_exited"]
