@@ -24,12 +24,12 @@ polygon = PackedVector2Array(11, 0, 1684, -10, 2648, -10, 2964, -8, 3234, -25.00
 
 [node name="PlayerNode" parent="." unique_id=666628483 instance=ExtResource("2_165jb")]
 z_index = 4096
-position = Vector2(3.9999998, 45)
+position = Vector2(-3697.9998, -986.99994)
 scale = Vector2(0.2, 0.2)
 
 [node name="SchoolNode" parent="." unique_id=1460610188 instance=ExtResource("3_cthax")]
-position = Vector2(-468, -77)
-scale = Vector2(2, 2)
+position = Vector2(-432, 322)
+scale = Vector2(3, 3)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1750259388]
 position = Vector2(-1057, 505)
@@ -68,6 +68,7 @@ position = Vector2(3366, 507)
 polygon = PackedVector2Array(-12, 1, -195, 1, -216, -28, -235, -236, -237, -240, -192, -252, -210, -470, -90, -455, -5, -405, 73, -203, 113, -184, 170, -125, 190, -2)
 
 [node name="LeftBoundaryBody" type="StaticBody2D" parent="." unique_id=1177154458]
+position = Vector2(86, 11)
 
 [node name="LeftBoundaryShape" type="CollisionShape2D" parent="LeftBoundaryBody" unique_id=650772536]
 position = Vector2(-4166, 189)
@@ -75,7 +76,7 @@ rotation = 1.5707964
 shape = SubResource("WorldBoundaryShape2D_xx5pe")
 
 [node name="RightBoundaryBody" type="StaticBody2D" parent="." unique_id=424236248]
-position = Vector2(4103, 6.000002)
+position = Vector2(4023, 93)
 rotation = 4.7054076
 
 [node name="RightBoundaryShape" type="CollisionShape2D" parent="RightBoundaryBody" unique_id=1643615736]

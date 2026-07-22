@@ -61,7 +61,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"character_art",
-"speed": 5.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -137,7 +137,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"jump",
-"speed": 28.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -178,7 +178,7 @@ animations = [{
 }],
 "loop": 1,
 "name": &"run",
-"speed": 15.0
+"speed": 30.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -238,12 +238,15 @@ shape = SubResource("RectangleShape2D_3w6k1")
 
 [node name="PlayerCamera" type="Camera2D" parent="PlayerBody" unique_id=876668513]
 limit_left = -4108
+limit_top = -1095
 limit_right = 4108
+limit_bottom = 1095
+limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerBody" unique_id=1592643057]
 position = Vector2(-1, 0)
 sprite_frames = SubResource("SpriteFrames_si6pb")
-animation = &"idle"
+animation = &"victory_dance"
 autoplay = "idle"
-frame_progress = 0.5363457
+frame_progress = 0.8207192
