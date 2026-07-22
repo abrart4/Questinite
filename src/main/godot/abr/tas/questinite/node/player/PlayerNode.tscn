@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bi5m81i635eq4"]
+
+[ext_resource type="Texture2D" uid="uid://dplgl8wei3ljm" path="res://src/resources/assets/questine/character-art/raccoon_transparent.svg" id="1_maqsv"]
+[ext_resource type="Script" uid="uid://dknnsbopehpcn" path="res://src/main/godot/abr/tas/questinite/node/player/PlayerScript.gd" id="1_sgv3h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3w6k1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_si6pb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_maqsv")
+}],
+"loop": 1,
+"name": &"character_art",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"victory_dance",
+"speed": 5.0
+}]
+
+[node name="PlayerNode" type="Node2D" unique_id=666628483]
+
+[node name="PlayerBody" type="CharacterBody2D" parent="." unique_id=536138819]
+script = ExtResource("1_sgv3h")
+
+[node name="PlayerCollisionShape" type="CollisionShape2D" parent="PlayerBody" unique_id=1347854607]
+shape = SubResource("RectangleShape2D_3w6k1")
+
+[node name="PlayerCamera" type="Camera2D" parent="PlayerBody" unique_id=876668513]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="PlayerBody" unique_id=1592643057]
+sprite_frames = SubResource("SpriteFrames_si6pb")
+animation = &"character_art"

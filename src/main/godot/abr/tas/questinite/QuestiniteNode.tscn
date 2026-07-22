@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://pcluvb3hyx4n"]
 
-[ext_resource type="PackedScene" uid="uid://brykmrbgxbdkh" path="res://BlossomScene.tscn" id="1_bho68"]
+[ext_resource type="PackedScene" uid="uid://d4mxkfnxedsot" path="res://src/main/godot/abr/tas/questinite/scene/BlossomScene.tscn" id="1_bho68"]
 
 [node name="GameNode" type="Node2D" unique_id=1890231142]
 
