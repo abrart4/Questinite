@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bi5m81i635eq4"]
 
-[ext_resource type="Texture2D" uid="uid://dplgl8wei3ljm" path="res://src/resources/assets/questine/character-art/raccoon_transparent.svg" id="1_maqsv"]
+[ext_resource type="Texture2D" uid="uid://dplgl8wei3ljm" path="res://src/main/resources/assets/questine/character-art/raccoon_transparent.svg" id="1_maqsv"]
 [ext_resource type="Script" uid="uid://dknnsbopehpcn" path="res://src/main/godot/abr/tas/questinite/node/player/PlayerScript.gd" id="1_sgv3h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3w6k1"]

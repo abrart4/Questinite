@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dew8g5wld8xvo"]
 
-[ext_resource type="Texture2D" uid="uid://2oeh1ccg5yfm" path="res://src/resources/assets/school_entrance.png" id="1_383xa"]
+[ext_resource type="Texture2D" uid="uid://2oeh1ccg5yfm" path="res://src/main/resources/assets/school_entrance.png" id="1_383xa"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3w6k1"]
 animations = [{
@@ -14,6 +14,7 @@ animations = [{
 }]
 
 [node name="SchoolNode" type="Node2D" unique_id=1460610188]
+scale = Vector2(2.01, 2.01)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=152612366]
 sprite_frames = SubResource("SpriteFrames_3w6k1")

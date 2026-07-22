@@ -17,7 +17,7 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 [display]
 
 window/size/viewport_width=1920
-window/size/viewport_height=696
+window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -52,6 +52,7 @@ interact={
 
 3d/physics_engine="Jolt Physics"
 2d/default_gravity=3950.394
+2d/size/viewport_height=696
 
 [rendering]
 

@@ -1,44 +1,69 @@
 [gd_scene format=3 uid="uid://d4mxkfnxedsot"]
 
+[ext_resource type="Texture2D" uid="uid://cnwdg8v8g0emx" path="res://src/main/resources/assets/background.jpg" id="1_cthax"]
 [ext_resource type="PackedScene" uid="uid://bi5m81i635eq4" path="res://src/main/godot/abr/tas/questinite/node/player/PlayerNode.tscn" id="2_165jb"]
 [ext_resource type="PackedScene" uid="uid://dew8g5wld8xvo" path="res://src/main/godot/abr/tas/questinite/node/player/SchoolNode.tscn" id="3_cthax"]
-[ext_resource type="Texture2D" uid="uid://bq24sbax66022" path="res://src/resources/assets/waterfall_background.jpg" id="3_dts0g"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e2o6t"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cfi2p"]
-distance = 65.0
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xx5pe"]
-distance = 7.0
 
 [node name="BlossomScene" type="Node2D" unique_id=1871977962]
 
-[node name="WorldBoundaryBody" type="StaticBody2D" parent="." unique_id=685674472]
-position = Vector2(-3, 29)
-
-[node name="GroundaryShape" type="CollisionShape2D" parent="WorldBoundaryBody" unique_id=1640624529]
-position = Vector2(1, 234)
-shape = SubResource("WorldBoundaryShape2D_e2o6t")
-
-[node name="LeftBoundaryShape" type="CollisionShape2D" parent="WorldBoundaryBody" unique_id=2119312007]
-position = Vector2(-1027, -16)
-rotation = 1.5707964
-shape = SubResource("WorldBoundaryShape2D_cfi2p")
-
-[node name="RightBoundaryShape" type="CollisionShape2D" parent="WorldBoundaryBody" unique_id=1446923972]
-position = Vector2(971, -1)
-rotation = -1.5707964
-shape = SubResource("WorldBoundaryShape2D_xx5pe")
-
 [node name="BackgroundSprite" type="Sprite2D" parent="." unique_id=750585314]
 z_index = -4096
-position = Vector2(1.1920929e-07, -1)
-texture = ExtResource("3_dts0g")
-metadata/_edit_lock_ = true
+texture = ExtResource("1_cthax")
+
+[node name="WorldBoundaryBody" type="StaticBody2D" parent="." unique_id=685674472]
+position = Vector2(0, 24.92)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="WorldBoundaryBody" unique_id=1372576707]
+position = Vector2(-4106, 437.08)
+polygon = PackedVector2Array(11, 0, 1684, -10, 2648, -10, 2964, -8, 3234, -25.00003, 4188, -27.00003, 4273, -27.00003, 4347, -47, 4740, -52, 5755, -24.00003, 5782, -9.0000305, 5997, -6.0000305, 7241, -3, 8215, -13, 8207, 586, 3, 587, -2, -9)
 
 [node name="PlayerNode" parent="." unique_id=666628483 instance=ExtResource("2_165jb")]
 z_index = 4096
+position = Vector2(3.9999998, 45)
+scale = Vector2(0.1, 0.1)
 
 [node name="SchoolNode" parent="." unique_id=1460610188 instance=ExtResource("3_cthax")]
-position = Vector2(1, 106)
+position = Vector2(-468, -77)
+scale = Vector2(2, 2)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1750259388]
+position = Vector2(-1057, 505)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D" unique_id=1612235416]
+polygon = PackedVector2Array(-12, 2, -91, 1, -95, -254, -84, -279, -86, -508, -26, -605, 0, -607, 29, -363, 59, -350, 89, -38, 91, 4, -1, 0)
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="." unique_id=1086360096]
+position = Vector2(-1670, 500)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D2" unique_id=1880821649]
+polygon = PackedVector2Array(-321, 3, -211, -240, -122, -254, -155, -284, -127, -449, -145, -457, -145, -538, -36, -625, 103, -664, 157, -879, 178, -877, 203, -986, 426, -1082, 611, -1051, 594, -936, 569, -925, 527, -741, 476, -709, 370, -677, 409, -625, 435, -351, 450, -296, 459, -187, 456, -131, 510, 7, 389, 2, 101, 4)
+
+[node name="RigidBody2D3" type="RigidBody2D" parent="." unique_id=653500645]
+position = Vector2(-2200, 503)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D3" unique_id=224670426]
+polygon = PackedVector2Array(-14, -2, -175, -9, -120, -201, -66, -236, 4, -479, 87, -542, 211, -562, 210, -297, 236, -288, 208, 1, 14, 3)
+
+[node name="RigidBody2D4" type="RigidBody2D" parent="." unique_id=796342523]
+position = Vector2(2172, 506)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D4" unique_id=839234053]
+polygon = PackedVector2Array(-13, 2, -75, 4, -29, -293, -4, -299, 26, -503, 58, -496, 115, -431, 110, -237, 121, -219, 165, 2)
+
+[node name="RigidBody2D5" type="RigidBody2D" parent="." unique_id=1850918437]
+position = Vector2(2673, 508)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D5" unique_id=1861410996]
+polygon = PackedVector2Array(-16, 1, -347, 1, -314, -126, -201, -142, -198, -248, -295, -295, -273, -519, -179, -601, 168, -520, 187, -527, 299, -463, 311, -393, 288, -384, 316, -248, 284, -219, 376, -210, 497, 1, 0, 0, -12, -1)
+
+[node name="RigidBody2D6" type="RigidBody2D" parent="." unique_id=1926267134]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D6" unique_id=1328400706]
+position = Vector2(3366, 507)
+polygon = PackedVector2Array(-12, 1, -195, 1, -216, -28, -235, -236, -237, -240, -192, -252, -210, -470, -90, -455, -5, -405, 73, -203, 113, -184, 170, -125, 190, -2)
+
+[node name="RigidBody2D7" type="RigidBody2D" parent="." unique_id=285031341]
+position = Vector2(3987, 506)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D7" unique_id=1501397986]
+polygon = PackedVector2Array(-14, 0, -111, -1, -121, -122, -51, -149, -1, -157, 5, -164, 57, -157, 100, -131, 145, -4)
