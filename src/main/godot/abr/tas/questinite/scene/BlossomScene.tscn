@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://brykmrbgxbdkh"]
+
+[ext_resource type="PackedScene" uid="uid://4i7m6313rrru" path="res://player.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://d1lryykecgcd5" path="res://right_boundary.gd" id="2_feb5d"]
+[ext_resource type="Texture2D" uid="uid://bq24sbax66022" path="res://assets/waterfall_background.jpg" id="3_dts0g"]
+[ext_resource type="PackedScene" uid="uid://dxbcbma613c10" path="res://schooll.tscn" id="3_feb5d"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e2o6t"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_cfi2p"]
+distance = 65.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xx5pe"]
+distance = 7.0
+
+[node name="BlossomScene" type="Node2D" unique_id=1871977962]
+
+[node name="WorldBoundaryBody" type="StaticBody2D" parent="." unique_id=685674472]
+position = Vector2(-3, 29)
+
+[node name="GroundaryShape" type="CollisionShape2D" parent="WorldBoundaryBody" unique_id=1640624529]
+position = Vector2(1, 234)
+shape = SubResource("WorldBoundaryShape2D_e2o6t")
+
+[node name="LeftBoundaryShape" type="CollisionShape2D" parent="WorldBoundaryBody" unique_id=2119312007]
+position = Vector2(-1027, -16)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_cfi2p")
+
+[node name="RightBoundaryShape" type="CollisionShape2D" parent="WorldBoundaryBody" unique_id=1446923972]
+position = Vector2(971, -1)
+rotation = -1.5707964
+shape = SubResource("WorldBoundaryShape2D_xx5pe")
+script = ExtResource("2_feb5d")
+
+[node name="PlayerBody" parent="." unique_id=1322502798 instance=ExtResource("1_80nbo")]
+z_index = 4096
+position = Vector2(1402, -302)
+scale = Vector2(0.5, 0.5)
+
+[node name="Camera2D" type="Camera2D" parent="PlayerBody" unique_id=505899989]
+position = Vector2(197.75, -39.5)
+scale = Vector2(0.25, 0.25)
+
+[node name="BackgroundSprite" type="Sprite2D" parent="." unique_id=750585314]
+z_index = -4096
+position = Vector2(1.1920929e-07, -1)
+texture = ExtResource("3_dts0g")
+metadata/_edit_lock_ = true
+
+[node name="School" parent="." unique_id=1499949400 instance=ExtResource("3_feb5d")]
+position = Vector2(-439, 79)
+scale = Vector2(2, 2)

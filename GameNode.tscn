@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://pcluvb3hyx4n"]
-
-[ext_resource type="PackedScene" uid="uid://brykmrbgxbdkh" path="res://BlossomScene.tscn" id="1_bho68"]
-
-[node name="GameNode" type="Node2D" unique_id=1890231142]
-
-[node name="BlossomScene" parent="." unique_id=1871977962 instance=ExtResource("1_bho68")]
