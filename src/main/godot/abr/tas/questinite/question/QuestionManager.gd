@@ -8,6 +8,7 @@ var questionArray
 @onready var Strength = $"../ScreenLayer/Strength"
 var questionActive
 var currentQuestion
+var fullyClearedAndReadyForTheNextOne = true
 
 func _ready():
 	json = JSON.new()
@@ -34,8 +35,9 @@ func getRandomQuestionData():
 	return dictionary
 	
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("request_question") && !questionActive:
+	if Input.is_action_just_pressed("request_question") && !questionActive && fullyClearedAndReadyForTheNextOne:
 		questionActive = true
+		fullyClearedAndReadyForTheNextOne = false
 		currentQuestion = getRandomQuestionData()
 		QuestionLabel.update(currentQuestion)
 
@@ -53,5 +55,6 @@ func _process(delta: float) -> void:
 				questionActive = false
 				await Questinite.delay(2)
 				QuestionLabel.clear()	
+				fullyClearedAndReadyForTheNextOne = true
 					
 		

@@ -1,6 +1,6 @@
 extends Label
 
-var strength = 0
+var strength = 1
 
 func _ready():
 	add_theme_font_size_override("font_size", 24)

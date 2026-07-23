@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 	elif $AnimatedSprite2D.animation == "jump":
 		$AnimatedSprite2D.play("idle")
 
-	if Input.is_action_just_pressed("jump") && is_on_floor():
+	if Input.is_action_just_pressed("jump") && is_on_floor() && !disableInputs:
 		velocity.y = JUMP_VELOCITY
 		$AnimatedSprite2D.play("jump")
 		
