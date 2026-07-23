@@ -7,8 +7,10 @@
 [ext_resource type="AudioStream" uid="uid://bgvv2bpp8q420" path="res://src/main/resources/assets/chill_music.wav" id="4_yj2y1"]
 [ext_resource type="PackedScene" uid="uid://bxa7to0m1lhak" path="res://src/main/godot/abr/tas/questinite/node/UfoNode.tscn" id="5_mlkd7"]
 [ext_resource type="Script" uid="uid://dcdj8henmnexq" path="res://src/main/godot/abr/tas/questinite/scene/QuestionLabel.gd" id="6_1tuva"]
+[ext_resource type="Script" uid="uid://du7y00ywrrab3" path="res://src/main/godot/abr/tas/questinite/scene/ScreenLayer.gd" id="6_5ix4j"]
 [ext_resource type="Script" uid="uid://c323sy6rsqyyr" path="res://src/main/godot/abr/tas/questinite/scene/Strength.gd" id="7_6ja7u"]
 [ext_resource type="Script" uid="uid://dqa6h3bgtcorn" path="res://src/main/godot/abr/tas/questinite/question/QuestionManager.gd" id="7_tkgw2"]
+[ext_resource type="Script" uid="uid://6thiqlgjw70k" path="res://src/main/godot/abr/tas/questinite/scene/ScreenControlRectangel.gd" id="9_qrg45"]
 [ext_resource type="Texture2D" uid="uid://wknjbkh0tkrr" path="res://src/main/resources/assets/evil.svg" id="10_rcu1r"]
 [ext_resource type="Script" uid="uid://bhswi6dppvbvf" path="res://src/main/godot/abr/tas/questinite/scene/EvilBody.gd" id="11_7n04g"]
 [ext_resource type="Script" uid="uid://b4yi0m44t3lub" path="res://src/main/godot/abr/tas/questinite/scene/EvilSprite.gd" id="11_034hu"]
@@ -25,6 +27,10 @@ b = Vector2(935, 9)
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_3w6k1"]
 a = Vector2(-46, -24)
 b = Vector2(40, 17)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_0im37"]
+a = Vector2(-54, -21)
+b = Vector2(4, 11)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xx5pe"]
 distance = 55.0
@@ -52,6 +58,8 @@ b = Vector2(17, 536)
 a = Vector2(3, -732)
 
 [node name="BlossomScene" type="Node2D" unique_id=1871977962]
+metadata/_edit_vertical_guides_ = [-2200.0]
+metadata/_edit_horizontal_guides_ = [634.0]
 
 [node name="EvilCutsceneArea" type="Area2D" parent="." unique_id=1560099947]
 position = Vector2(2973, -89)
@@ -79,7 +87,7 @@ position = Vector2(3172, 480.08002)
 shape = SubResource("SegmentShape2D_xx5pe")
 
 [node name="PlayerNode" parent="." unique_id=666628483 instance=ExtResource("2_165jb")]
-z_index = 4096
+z_index = 2048
 position = Vector2(-3937.9995, -964)
 scale = Vector2(0.2, 0.2)
 
@@ -119,6 +127,10 @@ gravity_scale = 0.0
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D4" unique_id=839234053]
 polygon = PackedVector2Array(-13, 2, -75, 4, -29, -293, -4, -299, 26, -503, 58, -496, 115, -431, 110, -237, 121, -219, 165, 2)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D4" unique_id=1545621445]
+position = Vector2(187, -134)
+shape = SubResource("SegmentShape2D_0im37")
+
 [node name="RigidBody2D5" type="RigidBody2D" parent="." unique_id=1850918437]
 position = Vector2(2673, 508)
 gravity_scale = 0.0
@@ -151,10 +163,13 @@ playback_type = 1
 position = Vector2(1978, -40)
 
 [node name="ScreenLayer" type="CanvasLayer" parent="." unique_id=2119244060]
+script = ExtResource("6_5ix4j")
 
 [node name="QuestionLabel" type="Label" parent="ScreenLayer" unique_id=1549393674]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 72.0
+offset_bottom = 55.0
 script = ExtResource("6_1tuva")
 metadata/_edit_use_anchors_ = true
 
@@ -167,6 +182,16 @@ text = "Strength: 1"
 horizontal_alignment = 2
 script = ExtResource("7_6ja7u")
 metadata/_edit_use_anchors_ = true
+
+[node name="ScreenControlRectangle" type="ColorRect" parent="ScreenLayer" unique_id=1389125465]
+z_index = 4096
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+script = ExtResource("9_qrg45")
 
 [node name="SpeechBubbleSprite" type="Sprite2D" parent="." unique_id=647554930]
 z_index = 4096

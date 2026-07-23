@@ -44,7 +44,7 @@ func start():
 	await Questinite.delay(delay)
 	dialog("Ready?")
 	await Questinite.delay(delay)
-	dialog("")
+	dialog("50 HP")
 	shouldRunAround = true
 	$"../EvilBoundaryBody".queue_free()
 	$"../EvilCutsceneArea".queue_free()
@@ -54,6 +54,7 @@ func start():
 	
 func onCollide():
 	health = health - $"../ScreenLayer/Strength".strength	
+	dialog("Ouch, I'm on " + health + "HP!")
 	
 func lose():
 	shouldRunAround = false
