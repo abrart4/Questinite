@@ -1,6 +1,6 @@
 # Questinite
 
-Use education to take down evil foes!
+Delivering pure belt to the cruelty of the world with educational prowess
 
 ## Customization
 
