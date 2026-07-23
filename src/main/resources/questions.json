@@ -1,7 +1,7 @@
 [
 	{
 		"type": "static",
-		"question": "What is 2 + 2",
+		"text": "What is 2 + 2?",
 		"answerProvider": {
 			"answerType": "static",
 			"answers": [
@@ -15,7 +15,7 @@
 	},
 	{
 		"type": "static",
-		"question": "What are we gaining from this program?",
+		"text": "What are we gaining from this program?",
 		"answerProvider": {
 			"answerType": "static",
 			"answers": [

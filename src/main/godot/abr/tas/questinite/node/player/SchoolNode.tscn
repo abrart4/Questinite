@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://fxyjvd8fkt4e" path="res://src/main/resources/assets/professor.png" id="5_7pggb"]
 [ext_resource type="AudioStream" uid="uid://bgdyue3hw8xrj" path="res://src/main/resources/assets/door_open.mp3" id="5_o7hmx"]
 [ext_resource type="Texture2D" uid="uid://buk06odpdpj" path="res://src/main/resources/assets/enter.png" id="7_me0vw"]
+[ext_resource type="Script" uid="uid://3kgunxm1mx17" path="res://src/main/godot/abr/tas/questinite/node/player/PromptLabel.gd" id="8_efhek"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3w6k1"]
 size = Vector2(33.83085, 34.328358)
@@ -22,9 +23,17 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efhek"]
+
 [node name="SchoolNode" type="Node2D" unique_id=1460610188]
 scale = Vector2(2.01, 2.01)
 script = ExtResource("1_ai7mh")
+
+[node name="EnterSprite" type="Sprite2D" parent="." unique_id=1232117456]
+z_index = 1
+position = Vector2(14.925398, -39.30345)
+scale = Vector2(0.14510761, 0.14510761)
+texture = ExtResource("7_me0vw")
 
 [node name="KnockingSFX" type="AudioStreamPlayer" parent="." unique_id=1754194292]
 stream = ExtResource("3_brjr8")
@@ -50,7 +59,12 @@ position = Vector2(13.930348, 11.442786)
 scale = Vector2(0.108395524, 0.108395524)
 texture = ExtResource("5_7pggb")
 
-[node name="EnterSprite" type="Sprite2D" parent="ProfessorSprite" unique_id=1232117456]
-position = Vector2(9.17981, -468.15808)
-scale = Vector2(1.3386865, 1.3386865)
-texture = ExtResource("7_me0vw")
+[node name="PromptLabel" type="Label" parent="ProfessorSprite" unique_id=1438953265]
+offset_left = 252.43832
+offset_top = -335.0545
+offset_right = 716.00684
+offset_bottom = -169.82214
+theme_override_styles/normal = SubResource("StyleBoxFlat_efhek")
+horizontal_alignment = 1
+autowrap_mode = 2
+script = ExtResource("8_efhek")

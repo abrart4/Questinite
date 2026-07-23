@@ -3,6 +3,9 @@ extends Node2D
 var hasStartedSchool = false
 @onready var playerBody = $"../PlayerNode/PlayerBody"
 
+func professorPrompt(message):
+	$ProfessorSprite/PromptLabel.setLabel(message)
+
 func startSchool():
 	if hasStartedSchool:
 		return
@@ -24,6 +27,22 @@ func startSchool():
 	professorTween.tween_property($ProfessorSprite, "self_modulate:a", 1, 1)
 	professorTween.tween_property($ProfessorSprite, "position", Vector2(60, 45), 1)
 	professorTween.tween_property($"../BackgroundMusicManager", "volume_db", 0, 1)
-	
+	const delay = 2
+	professorPrompt("Hello!")
+	await Questinite.delay(delay)
+	professorPrompt("It seems like you want to enter the school, but we're unfortunately closed.")
+	await Questinite.delay(delay)
+	professorPrompt("You were in the right track, though.")
+	await Questinite.delay(delay)
+	professorPrompt("There are very evil creatures here, but their weakness is education.")
+	await Questinite.delay(delay)
+	professorPrompt("Answering questions correctly increases your strength, and there is no limit.")
+	await Questinite.delay(delay)
+	professorPrompt("Fortunately, I can educate you with different questions.")
+	await Questinite.delay(delay)
+	professorPrompt("At any place or time, press Q for a question!")
+	playerBody.disableInputs = false
+	$"../UfoNode".queue_free()
+	$"../SpeechBubbleSprite".queue_free()
 	
 	
