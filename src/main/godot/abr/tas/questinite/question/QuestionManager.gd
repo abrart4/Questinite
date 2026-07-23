@@ -11,9 +11,20 @@ func init():
 	questionArray = json.data
 	print("Loaded QuestionManager with error " + str(error) + " and " + str(questionArray.size()) + " questions")
 	
-func getRandomQuestion():
-	return questionArray.pick_random()
-	
-func getQuestionData(questionJson):
-	var type = questionJson["type"]
-	return type
+func getRandomQuestionData():
+	var question = questionArray.pick_random()
+	var type = question["type"]
+	var dictionary = {
+		"question": "",
+		"answers": [],
+		"correctAnswerIndex": 0
+	}
+	if type == "static": 
+		dictionary["question"] = question["question"]
+		var answerProvider = question["answerProvider"]
+		var answerType = answerProvider["answerType"]
+		if answerType == "static":
+			dictionary["answers"] = answerProvider["answers"]
+			dictionary["correctAnswerIndex"] = answerProvider["correctAnswerIndex"]
+	return dictionary
+		
