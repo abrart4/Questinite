@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cnwdg8v8g0emx" path="res://src/main/resources/assets/background.jpg" id="1_cthax"]
 [ext_resource type="PackedScene" uid="uid://bi5m81i635eq4" path="res://src/main/godot/abr/tas/questinite/node/player/PlayerNode.tscn" id="2_165jb"]
 [ext_resource type="PackedScene" uid="uid://dew8g5wld8xvo" path="res://src/main/godot/abr/tas/questinite/node/player/SchoolNode.tscn" id="3_cthax"]
+[ext_resource type="Texture2D" uid="uid://ds4m1rjuayqll" path="res://src/main/resources/assets/speech_bubble.png" id="3_tkgw2"]
 [ext_resource type="AudioStream" uid="uid://bgvv2bpp8q420" path="res://src/main/resources/assets/chill_music.wav" id="4_yj2y1"]
 [ext_resource type="PackedScene" uid="uid://bxa7to0m1lhak" path="res://src/main/godot/abr/tas/questinite/node/UfoNode.tscn" id="5_mlkd7"]
 
@@ -31,7 +32,7 @@ polygon = PackedVector2Array(11, 0, 1684, -10, 2648, -10, 2964, -8, 3234, -25.00
 
 [node name="PlayerNode" parent="." unique_id=666628483 instance=ExtResource("2_165jb")]
 z_index = 4096
-position = Vector2(1398.9998, 156)
+position = Vector2(1396, 330)
 scale = Vector2(0.2, 0.2)
 
 [node name="SchoolNode" parent="." unique_id=1460610188 instance=ExtResource("3_cthax")]
@@ -107,3 +108,8 @@ playback_type = 1
 
 [node name="UfoNode" parent="." unique_id=612834295 instance=ExtResource("5_mlkd7")]
 position = Vector2(1978, -40)
+
+[node name="SpeechBubbleSprite" type="Sprite2D" parent="." unique_id=1053859573]
+position = Vector2(1669.5, 98.499916)
+scale = Vector2(0.19662158, 0.19662158)
+texture = ExtResource("3_tkgw2")

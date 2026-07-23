@@ -227,6 +227,7 @@ animations = [{
 }]
 
 [node name="PlayerNode" type="Node2D" unique_id=666628483]
+position = Vector2(0, -7)
 
 [node name="PlayerBody" type="CharacterBody2D" parent="." unique_id=536138819]
 collision_layer = 3
