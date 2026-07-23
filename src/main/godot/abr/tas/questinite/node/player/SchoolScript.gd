@@ -2,6 +2,7 @@ extends Node2D
 
 var hasStartedSchool = false
 @onready var playerBody = $"../PlayerNode/PlayerBody"
+var delay = 2
 
 func professorPrompt(message):
 	$ProfessorSprite/PromptLabel.setLabel(message)
@@ -27,7 +28,6 @@ func startSchool():
 	professorTween.tween_property($ProfessorSprite, "self_modulate:a", 1, 1)
 	professorTween.tween_property($ProfessorSprite, "position", Vector2(60, 45), 1)
 	professorTween.tween_property($"../BackgroundMusicManager", "volume_db", 0, 1)
-	const delay = 2
 	professorPrompt("Hello!")
 	await Questinite.delay(delay)
 	professorPrompt("It seems like you want to enter the school, but we're unfortunately closed.")
@@ -40,9 +40,24 @@ func startSchool():
 	await Questinite.delay(delay)
 	professorPrompt("Fortunately, I can educate you with different questions.")
 	await Questinite.delay(delay)
-	professorPrompt("At any place or time, press Q for a question!")
+	professorPrompt("At any place or time, you can press Q to answer a random question and gain strength.")
+	await Questinite.delay(delay)
+	professorPrompt("...")
+	await Questinite.delay(delay)
+	professorPrompt("You're a gamer, so you want to encounter the evil on purpose?")
+	await Questinite.delay(delay)
+	professorPrompt("This is fun to you?")
+	await Questinite.delay(delay)
+	professorPrompt("...")
+	await Questinite.delay(delay)
+	professorPrompt("Head east.")
+	await Questinite.delay(delay)
 	playerBody.disableInputs = false
 	$"../UfoNode".queue_free()
 	$"../SpeechBubbleSprite".queue_free()
+	
+func _process(delta: float) -> void:
+	if Input.is_action_pressed("disable_delay"):
+		delay = 0.25
 	
 	
