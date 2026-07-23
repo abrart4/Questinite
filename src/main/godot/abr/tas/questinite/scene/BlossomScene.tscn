@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://dcdj8henmnexq" path="res://src/main/godot/abr/tas/questinite/scene/QuestionLabel.gd" id="6_1tuva"]
 [ext_resource type="Script" uid="uid://c323sy6rsqyyr" path="res://src/main/godot/abr/tas/questinite/scene/Strength.gd" id="7_6ja7u"]
 [ext_resource type="Script" uid="uid://dqa6h3bgtcorn" path="res://src/main/godot/abr/tas/questinite/question/QuestionManager.gd" id="7_tkgw2"]
+[ext_resource type="Script" uid="uid://ddfq43on7l47i" path="res://src/main/godot/abr/tas/questinite/scene/EvilCutsceneShape.gd" id="10_rcu1r"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_3w6k1"]
 a = Vector2(-46, -24)
@@ -18,6 +19,9 @@ b = Vector2(40, 17)
 distance = 55.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hugrs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3w6k1"]
+size = Vector2(47, 1148)
 
 [node name="BlossomScene" type="Node2D" unique_id=1871977962]
 
@@ -131,3 +135,13 @@ texture = ExtResource("3_tkgw2")
 
 [node name="QuestionManager" type="Node2D" parent="." unique_id=716471199]
 script = ExtResource("7_tkgw2")
+
+[node name="EvilCutsceneArea" type="Area2D" parent="." unique_id=834227249]
+position = Vector2(2924, -45)
+
+[node name="EvilCutsceneShape" type="CollisionShape2D" parent="EvilCutsceneArea" unique_id=1706781402]
+position = Vector2(22.5, -486)
+shape = SubResource("RectangleShape2D_3w6k1")
+script = ExtResource("10_rcu1r")
+
+[connection signal="body_entered" from="EvilCutsceneArea" to="PlayerNode" method="_on_evil_cutscene_area_body_entered"]
