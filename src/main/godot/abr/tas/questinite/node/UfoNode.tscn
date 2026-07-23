@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bxa7to0m1lhak"]
+
+[ext_resource type="Texture2D" uid="uid://dd48u7jo5tit" path="res://src/main/resources/assets/ufo.png" id="1_vy8qs"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_3w6k1"]
+a = Vector2(-22, 102)
+b = Vector2(158, -718)
+
+[node name="UfoNode" type="Node2D" unique_id=612834295]
+
+[node name="UfoSprite" type="Sprite2D" parent="." unique_id=998676105]
+scale = Vector2(2, 2)
+texture = ExtResource("1_vy8qs")
+
+[node name="UfoBoundaryBody" type="RigidBody2D" parent="." unique_id=1345423336]
+position = Vector2(-224, 457)
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UfoBoundaryBody" unique_id=317719347]
+shape = SubResource("SegmentShape2D_3w6k1")

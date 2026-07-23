@@ -3,6 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://cnwdg8v8g0emx" path="res://src/main/resources/assets/background.jpg" id="1_cthax"]
 [ext_resource type="PackedScene" uid="uid://bi5m81i635eq4" path="res://src/main/godot/abr/tas/questinite/node/player/PlayerNode.tscn" id="2_165jb"]
 [ext_resource type="PackedScene" uid="uid://dew8g5wld8xvo" path="res://src/main/godot/abr/tas/questinite/node/player/SchoolNode.tscn" id="3_cthax"]
+[ext_resource type="AudioStream" uid="uid://bgvv2bpp8q420" path="res://src/main/resources/assets/chill_music.wav" id="4_yj2y1"]
+[ext_resource type="PackedScene" uid="uid://bxa7to0m1lhak" path="res://src/main/godot/abr/tas/questinite/node/UfoNode.tscn" id="5_mlkd7"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_3w6k1"]
+a = Vector2(-46, -24)
+b = Vector2(40, 17)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_xx5pe"]
 distance = 55.0
@@ -16,15 +22,16 @@ z_index = -4096
 texture = ExtResource("1_cthax")
 
 [node name="GroundaryBody" type="StaticBody2D" parent="." unique_id=685674472]
-position = Vector2(0, 24.92)
+position = Vector2(0, 32.92)
+collision_layer = 2
 
 [node name="GroundaryPolygon" type="CollisionPolygon2D" parent="GroundaryBody" unique_id=1372576707]
-position = Vector2(-4106, 437.08)
+position = Vector2(-4106, 469.08)
 polygon = PackedVector2Array(11, 0, 1684, -10, 2648, -10, 2964, -8, 3234, -25.00003, 4188, -27.00003, 4273, -27.00003, 4347, -47, 4740, -52, 5755, -24.00003, 5782, -9.0000305, 5997, -6.0000305, 7241, -3, 8215, -13, 8207, 586, 3, 587, -2, -9)
 
 [node name="PlayerNode" parent="." unique_id=666628483 instance=ExtResource("2_165jb")]
 z_index = 4096
-position = Vector2(-3697.9998, -986.99994)
+position = Vector2(1398.9998, 156)
 scale = Vector2(0.2, 0.2)
 
 [node name="SchoolNode" parent="." unique_id=1460610188 instance=ExtResource("3_cthax")]
@@ -32,36 +39,46 @@ position = Vector2(-432, 322)
 scale = Vector2(3, 3)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1750259388]
-position = Vector2(-1057, 505)
+position = Vector2(-1059, 507)
+gravity_scale = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D" unique_id=1612235416]
 polygon = PackedVector2Array(-12, 2, -91, 1, -95, -254, -84, -279, -86, -508, -26, -605, 0, -607, 29, -363, 59, -350, 89, -38, 91, 4, -1, 0)
 
 [node name="RigidBody2D2" type="RigidBody2D" parent="." unique_id=1086360096]
 position = Vector2(-1670, 500)
+gravity_scale = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D2" unique_id=1880821649]
 polygon = PackedVector2Array(-321, 3, -211, -240, -122, -254, -155, -284, -127, -449, -145, -457, -145, -538, -36, -625, 103, -664, 157, -879, 178, -877, 203, -986, 426, -1082, 611, -1051, 594, -936, 569, -925, 527, -741, 476, -709, 370, -677, 409, -625, 435, -351, 450, -296, 459, -187, 456, -131, 510, 7, 389, 2, 101, 4)
 
 [node name="RigidBody2D3" type="RigidBody2D" parent="." unique_id=653500645]
 position = Vector2(-2200, 503)
+gravity_scale = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D3" unique_id=224670426]
 polygon = PackedVector2Array(-14, -2, -175, -9, -120, -201, -66, -236, 4, -479, 87, -542, 211, -562, 210, -297, 236, -288, 208, 1, 14, 3)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D3" unique_id=1240790613]
+position = Vector2(280, -264)
+shape = SubResource("SegmentShape2D_3w6k1")
+
 [node name="RigidBody2D4" type="RigidBody2D" parent="." unique_id=796342523]
 position = Vector2(2172, 506)
+gravity_scale = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D4" unique_id=839234053]
 polygon = PackedVector2Array(-13, 2, -75, 4, -29, -293, -4, -299, 26, -503, 58, -496, 115, -431, 110, -237, 121, -219, 165, 2)
 
 [node name="RigidBody2D5" type="RigidBody2D" parent="." unique_id=1850918437]
 position = Vector2(2673, 508)
+gravity_scale = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D5" unique_id=1861410996]
 polygon = PackedVector2Array(-16, 1, -347, 1, -314, -126, -201, -142, -198, -248, -295, -295, -273, -519, -179, -601, 168, -520, 187, -527, 299, -463, 311, -393, 288, -384, 316, -248, 284, -219, 376, -210, 497, 1, 0, 0, -12, -1)
 
 [node name="RigidBody2D6" type="RigidBody2D" parent="." unique_id=1926267134]
+gravity_scale = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D6" unique_id=1328400706]
 position = Vector2(3366, 507)
@@ -82,3 +99,11 @@ rotation = 4.7054076
 [node name="RightBoundaryShape" type="CollisionShape2D" parent="RightBoundaryBody" unique_id=1643615736]
 position = Vector2(0.097740166, -13.999659)
 shape = SubResource("WorldBoundaryShape2D_hugrs")
+
+[node name="BackgroundMusicManager" type="AudioStreamPlayer" parent="." unique_id=81177701]
+stream = ExtResource("4_yj2y1")
+autoplay = true
+playback_type = 1
+
+[node name="UfoNode" parent="." unique_id=612834295 instance=ExtResource("5_mlkd7")]
+position = Vector2(1978, -40)

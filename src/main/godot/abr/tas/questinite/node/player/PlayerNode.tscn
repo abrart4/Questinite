@@ -51,8 +51,6 @@
 [ext_resource type="Texture2D" uid="uid://0ij6tlyhwxcd" path="res://src/main/resources/assets/questine/victory-dance/victory-dance0025.png" id="49_15a71"]
 [ext_resource type="Texture2D" uid="uid://t1xryktonxg7" path="res://src/main/resources/assets/questine/victory-dance/victory-dance0027.png" id="50_dip0r"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3w6k1"]
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_si6pb"]
 animations = [{
 "frames": [{
@@ -231,10 +229,9 @@ animations = [{
 [node name="PlayerNode" type="Node2D" unique_id=666628483]
 
 [node name="PlayerBody" type="CharacterBody2D" parent="." unique_id=536138819]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_sgv3h")
-
-[node name="PlayerCollisionShape" type="CollisionShape2D" parent="PlayerBody" unique_id=1347854607]
-shape = SubResource("RectangleShape2D_3w6k1")
 
 [node name="PlayerCamera" type="Camera2D" parent="PlayerBody" unique_id=876668513]
 limit_left = -4108
@@ -250,3 +247,7 @@ sprite_frames = SubResource("SpriteFrames_si6pb")
 animation = &"victory_dance"
 autoplay = "idle"
 frame_progress = 0.8207192
+
+[node name="PlayerCollisionPolygon" type="CollisionPolygon2D" parent="PlayerBody" unique_id=463955481]
+position = Vector2(104, 140)
+polygon = PackedVector2Array(-15, -3, -23, -3, -31, 61, -82, 52, -57, -13, -75, -31, -117, -29, -158, -35, -191, -56, -211, -79, -214, -112, -190, -133, -157, -134, -137, -109, -113, -81, -85, -66, -73, -70, -64, -111, -53, -151, -75, -156, -117, -161, -162, -161, -151, -181, -177, -179, -156, -195, -179, -214, -129, -251, -104, -315, -127, -388, -113, -438, -36, -400, -16, -374, 28, -370, 122, -413, 131, -400, 96, -345, 127, -244, 147, -226, 128, -208, 155, -192, 127, -180, 149, -168, 31, -145, 41, -116, 106, -136, 133, -125, 119, -96, 55, -79, 58, -37, 43, -17, 63, 52, 49, 64, 14, 56, 18, -5, -9, -3)
