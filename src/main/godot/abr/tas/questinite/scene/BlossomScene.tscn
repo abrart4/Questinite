@@ -9,7 +9,18 @@
 [ext_resource type="Script" uid="uid://dcdj8henmnexq" path="res://src/main/godot/abr/tas/questinite/scene/QuestionLabel.gd" id="6_1tuva"]
 [ext_resource type="Script" uid="uid://c323sy6rsqyyr" path="res://src/main/godot/abr/tas/questinite/scene/Strength.gd" id="7_6ja7u"]
 [ext_resource type="Script" uid="uid://dqa6h3bgtcorn" path="res://src/main/godot/abr/tas/questinite/question/QuestionManager.gd" id="7_tkgw2"]
-[ext_resource type="Script" uid="uid://ddfq43on7l47i" path="res://src/main/godot/abr/tas/questinite/scene/EvilCutsceneShape.gd" id="10_rcu1r"]
+[ext_resource type="Texture2D" uid="uid://wknjbkh0tkrr" path="res://src/main/resources/assets/evil.svg" id="10_rcu1r"]
+[ext_resource type="Script" uid="uid://bhswi6dppvbvf" path="res://src/main/godot/abr/tas/questinite/scene/EvilBody.gd" id="11_7n04g"]
+[ext_resource type="Script" uid="uid://b4yi0m44t3lub" path="res://src/main/godot/abr/tas/questinite/scene/EvilSprite.gd" id="11_034hu"]
+[ext_resource type="Script" uid="uid://boskl00g8ekxs" path="res://src/main/godot/abr/tas/questinite/scene/EvilLabel.gd" id="12_04o5e"]
+[ext_resource type="AudioStream" uid="uid://c1m87w66tmd2u" path="res://src/main/resources/assets/boss_fight_music.wav" id="13_y0qot"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xx5pe"]
+size = Vector2(79, 1066)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_xx5pe"]
+a = Vector2(-1, 16)
+b = Vector2(935, 9)
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_3w6k1"]
 a = Vector2(-46, -24)
@@ -20,10 +31,34 @@ distance = 55.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hugrs"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3w6k1"]
-size = Vector2(47, 1148)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvog6"]
+size = Vector2(85.5, 1180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hugrs"]
+size = Vector2(123, 123)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0im37"]
+size = Vector2(123.75, 121)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_tvog6"]
+a = Vector2(475, -17)
+b = Vector2(-448, -19)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_7n04g"]
+a = Vector2(31, -1128)
+b = Vector2(17, 536)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_hugrs"]
+a = Vector2(3, -732)
 
 [node name="BlossomScene" type="Node2D" unique_id=1871977962]
+
+[node name="EvilCutsceneArea" type="Area2D" parent="." unique_id=1560099947]
+position = Vector2(2973, -89)
+
+[node name="EvilCutsceneShape" type="CollisionShape2D" parent="EvilCutsceneArea" unique_id=1896645334]
+position = Vector2(14.5, -433)
+shape = SubResource("RectangleShape2D_xx5pe")
 
 [node name="BackgroundSprite" type="Sprite2D" parent="." unique_id=750585314]
 z_index = -4096
@@ -31,15 +66,21 @@ texture = ExtResource("1_cthax")
 
 [node name="GroundaryBody" type="StaticBody2D" parent="." unique_id=685674472]
 position = Vector2(0, 32.92)
-collision_layer = 2
+collision_layer = 6
+collision_mask = 6
 
 [node name="GroundaryPolygon" type="CollisionPolygon2D" parent="GroundaryBody" unique_id=1372576707]
 position = Vector2(-4106, 501.07996)
 polygon = PackedVector2Array(11, 0, 1684, -10, 2648, -10, 2964, -8, 3234, -25.00003, 4188, -27.00003, 4273, -27.00003, 4347, -47, 4740, -52, 5755, -24.00003, 5782, -9.0000305, 5997, -6.0000305, 7241, -3, 8215, -13, 8207, 586, 3, 587, -2, -9)
 
+[node name="GroundaryEndSegment" type="CollisionShape2D" parent="GroundaryBody" unique_id=1725373204]
+visible = false
+position = Vector2(3172, 480.08002)
+shape = SubResource("SegmentShape2D_xx5pe")
+
 [node name="PlayerNode" parent="." unique_id=666628483 instance=ExtResource("2_165jb")]
 z_index = 4096
-position = Vector2(-3920, -1008.9999)
+position = Vector2(2476.9995, -500.00003)
 scale = Vector2(0.2, 0.2)
 
 [node name="SchoolNode" parent="." unique_id=1460610188 instance=ExtResource("3_cthax")]
@@ -136,12 +177,64 @@ texture = ExtResource("3_tkgw2")
 [node name="QuestionManager" type="Node2D" parent="." unique_id=716471199]
 script = ExtResource("7_tkgw2")
 
-[node name="EvilCutsceneArea" type="Area2D" parent="." unique_id=834227249]
-position = Vector2(2924, -45)
+[node name="EvilBoundaryBody" type="RigidBody2D" parent="." unique_id=159379591]
+position = Vector2(3016, -110)
+gravity_scale = 0.0
 
-[node name="EvilCutsceneShape" type="CollisionShape2D" parent="EvilCutsceneArea" unique_id=1706781402]
-position = Vector2(22.5, -486)
-shape = SubResource("RectangleShape2D_3w6k1")
-script = ExtResource("10_rcu1r")
+[node name="EvilBoundaryShape" type="CollisionShape2D" parent="EvilBoundaryBody" unique_id=153463958]
+position = Vector2(3, -466)
+shape = SubResource("RectangleShape2D_tvog6")
+
+[node name="EvilMusicManager" type="AudioStreamPlayer" parent="." unique_id=474155827]
+stream = ExtResource("13_y0qot")
+
+[node name="EvilBody" type="CharacterBody2D" parent="." unique_id=1675696067]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("11_7n04g")
+
+[node name="EvilSprite" type="Sprite2D" parent="EvilBody" unique_id=849193132]
+position = Vector2(3772, 403)
+texture = ExtResource("10_rcu1r")
+script = ExtResource("11_034hu")
+
+[node name="EvilLabel" type="Label" parent="EvilBody/EvilSprite" unique_id=1237397582]
+offset_left = -59.0
+offset_top = -256.0
+offset_right = 61.0
+offset_bottom = -87.0
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("12_04o5e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EvilBody" unique_id=2107120771]
+position = Vector2(3772, 403)
+shape = SubResource("RectangleShape2D_hugrs")
+
+[node name="EvilArea" type="Area2D" parent="EvilBody" unique_id=1611491344]
+
+[node name="EvilRectangle" type="CollisionShape2D" parent="EvilBody/EvilArea" unique_id=245980790]
+position = Vector2(3771.875, 401.5)
+shape = SubResource("RectangleShape2D_0im37")
+
+[node name="EvilFightBoundaryBody" type="RigidBody2D" parent="." unique_id=630038545]
+position = Vector2(3631, 528)
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EvilFightBoundaryBody" unique_id=269069052]
+position = Vector2(-8, -4)
+shape = SubResource("SegmentShape2D_tvog6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EvilFightBoundaryBody" unique_id=823780637]
+position = Vector2(-664, -510)
+shape = SubResource("SegmentShape2D_7n04g")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="EvilFightBoundaryBody" unique_id=1010884140]
+position = Vector2(480, -8)
+shape = SubResource("SegmentShape2D_hugrs")
 
 [connection signal="body_entered" from="EvilCutsceneArea" to="PlayerNode" method="_on_evil_cutscene_area_body_entered"]
+[connection signal="body_entered" from="EvilBody/EvilArea" to="PlayerNode" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="EvilBody/EvilArea" to="PlayerNode" method="_on_evil_area_body_entered"]

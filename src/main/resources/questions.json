@@ -1,16 +1,16 @@
 [
 	{
 		"type": "static",
-		"text": "What is 2 + 2?",
+		"text": "What is 2 + 4?",
 		"answerProvider": {
 			"answerType": "static",
 			"answers": [
-				"3",
+				"three!",
 				"4",
 				"5",
-				"six!"
+				"6"
 			],
-			"correctAnswerIndex": 1
+			"correctAnswerIndex": 0
 		}
 	},
 	{
@@ -19,17 +19,17 @@
 		"answerProvider": {
 			"answerType": "static",
 			"answers": [
-				"575 USD",
-				"linkedin connections",
-				"lots of food",
-				"all of the above"
+				"$575 (USD)",
+				"Many LinkedIn connections",
+				"Tons of food",
+				"All of the above"
 			],
 			"correctAnswerIndex": 3
 		}
 	},
 	{
 		"type": "static",
-		"text": "What was not part of Dennis Morgan's essential 3 components of game design?",
+		"text": "What was not part of Dennis Morgan's essential three components of game design?",
 		"answerProvider": {
 			"answerType": "static",
 			"answers": [

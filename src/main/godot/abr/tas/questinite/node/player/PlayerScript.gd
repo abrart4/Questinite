@@ -35,3 +35,6 @@ func _physics_process(delta: float) -> void:
 			$AnimatedSprite2D.play("idle")
 
 	move_and_slide()
+	
+func _on_evil_cutscene_area_body_entered(body: Node2D) -> void:
+	print(body.name)

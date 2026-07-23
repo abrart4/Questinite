@@ -14,7 +14,7 @@ func startSchool():
 	print("Starting school")
 	playerBody.disableInputs = true
 	var fadeOutTween = create_tween()
-	fadeOutTween.tween_property($"../BackgroundMusicManager", "volume_db", -40, 2)
+	fadeOutTween.tween_property($"../BackgroundMusicManager", "volume_db", Questinite.VOLUME_OFF, 2)
 	await fadeOutTween.finished
 	$KnockingSFX.play()
 	await Questinite.delay(2)
@@ -27,7 +27,7 @@ func startSchool():
 	professorTween.set_parallel(true)
 	professorTween.tween_property($ProfessorSprite, "self_modulate:a", 1, 1)
 	professorTween.tween_property($ProfessorSprite, "position", Vector2(60, 45), 1)
-	professorTween.tween_property($"../BackgroundMusicManager", "volume_db", 0, 1)
+	professorTween.tween_property($"../BackgroundMusicManager", "volume_db", Questinite.VOLUME_ON, 1)
 	professorPrompt("Hello!")
 	await Questinite.delay(delay)
 	professorPrompt("It seems like you want to enter the school, but we're unfortunately closed.")
