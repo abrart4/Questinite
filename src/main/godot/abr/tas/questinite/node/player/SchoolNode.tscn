@@ -1,6 +1,15 @@
 [gd_scene format=3 uid="uid://dew8g5wld8xvo"]
 
 [ext_resource type="Texture2D" uid="uid://2oeh1ccg5yfm" path="res://src/main/resources/assets/school_entrance.png" id="1_383xa"]
+[ext_resource type="Script" uid="uid://cwbmj1l0jq0j" path="res://src/main/godot/abr/tas/questinite/node/player/SchoolScript.gd" id="1_ai7mh"]
+[ext_resource type="Script" uid="uid://bitp0lgkoc57m" path="res://src/main/godot/abr/tas/questinite/node/player/school_door_body.gd" id="2_ehcsh"]
+[ext_resource type="AudioStream" uid="uid://ckkudcnkxv2na" path="res://src/main/resources/assets/door_knock.mp3" id="3_brjr8"]
+[ext_resource type="Texture2D" uid="uid://fxyjvd8fkt4e" path="res://src/main/resources/assets/professor.png" id="5_7pggb"]
+[ext_resource type="AudioStream" uid="uid://bgdyue3hw8xrj" path="res://src/main/resources/assets/door_open.mp3" id="5_o7hmx"]
+[ext_resource type="Texture2D" uid="uid://buk06odpdpj" path="res://src/main/resources/assets/enter.png" id="7_me0vw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3w6k1"]
+size = Vector2(33.83085, 34.328358)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3w6k1"]
 animations = [{
@@ -15,6 +24,33 @@ animations = [{
 
 [node name="SchoolNode" type="Node2D" unique_id=1460610188]
 scale = Vector2(2.01, 2.01)
+script = ExtResource("1_ai7mh")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=152612366]
+[node name="KnockingSFX" type="AudioStreamPlayer" parent="." unique_id=1754194292]
+stream = ExtResource("3_brjr8")
+
+[node name="SchoolDoorBody" type="Area2D" parent="." unique_id=389131099]
+scale = Vector2(0.9999998, 0.9999998)
+script = ExtResource("2_ehcsh")
+
+[node name="SchoolDoorShape" type="CollisionShape2D" parent="SchoolDoorBody" unique_id=923526652]
+position = Vector2(14.925367, 12.686563)
+scale = Vector2(0.9999997, 0.9999997)
+shape = SubResource("RectangleShape2D_3w6k1")
+
+[node name="SchoolSprite" type="AnimatedSprite2D" parent="." unique_id=152612366]
 sprite_frames = SubResource("SpriteFrames_3w6k1")
+
+[node name="OpeningSFX" type="AudioStreamPlayer" parent="." unique_id=1342996002]
+stream = ExtResource("5_o7hmx")
+
+[node name="ProfessorSprite" type="Sprite2D" parent="." unique_id=870516428]
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(13.930348, 11.442786)
+scale = Vector2(0.108395524, 0.108395524)
+texture = ExtResource("5_7pggb")
+
+[node name="EnterSprite" type="Sprite2D" parent="ProfessorSprite" unique_id=1232117456]
+position = Vector2(9.17981, -468.15808)
+scale = Vector2(1.3386865, 1.3386865)
+texture = ExtResource("7_me0vw")

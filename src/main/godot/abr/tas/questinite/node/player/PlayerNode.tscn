@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bi5m81i635eq4"]
 
 [ext_resource type="Texture2D" uid="uid://dplgl8wei3ljm" path="res://src/main/resources/assets/questine/character-art/raccoon_transparent.svg" id="1_maqsv"]
+[ext_resource type="Script" uid="uid://q3vabxafkae4" path="res://src/main/godot/abr/tas/questinite/node/player/player_node.gd" id="1_ovl5b"]
 [ext_resource type="Script" uid="uid://dknnsbopehpcn" path="res://src/main/godot/abr/tas/questinite/node/player/PlayerScript.gd" id="1_sgv3h"]
 [ext_resource type="Texture2D" uid="uid://8yb60b1kkj85" path="res://src/main/resources/assets/questine/idle/0001.png" id="3_1x6rc"]
 [ext_resource type="Texture2D" uid="uid://b3fp7l6ufmcre" path="res://src/main/resources/assets/questine/idle/0003.png" id="4_ovl5b"]
@@ -228,6 +229,7 @@ animations = [{
 
 [node name="PlayerNode" type="Node2D" unique_id=666628483]
 position = Vector2(0, -7)
+script = ExtResource("1_ovl5b")
 
 [node name="PlayerBody" type="CharacterBody2D" parent="." unique_id=536138819]
 collision_layer = 3

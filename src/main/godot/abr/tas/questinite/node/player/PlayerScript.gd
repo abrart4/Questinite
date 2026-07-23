@@ -3,7 +3,14 @@ extends CharacterBody2D
 
 const SPEED = 600.0
 const JUMP_VELOCITY = -1600.0
+var disableInputs = false
+var disableInputsOverride = 0
 
+func getDirection():
+	if disableInputs:
+		return disableInputsOverride
+	else:
+		return Input.get_axis("left", "right")
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -16,7 +23,7 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play("jump")
 		
 
-	var direction := Input.get_axis("left", "right")
+	var direction = getDirection()
 	if direction:
 		$AnimatedSprite2D.flip_h = direction < 0
 		velocity.x = direction * SPEED

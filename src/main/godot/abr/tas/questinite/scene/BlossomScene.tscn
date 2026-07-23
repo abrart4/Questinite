@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ds4m1rjuayqll" path="res://src/main/resources/assets/speech_bubble.png" id="3_tkgw2"]
 [ext_resource type="AudioStream" uid="uid://bgvv2bpp8q420" path="res://src/main/resources/assets/chill_music.wav" id="4_yj2y1"]
 [ext_resource type="PackedScene" uid="uid://bxa7to0m1lhak" path="res://src/main/godot/abr/tas/questinite/node/UfoNode.tscn" id="5_mlkd7"]
+[ext_resource type="PackedScene" uid="uid://qtth3kr0ljqr" path="res://src/main/godot/abr/tas/questinite/node/ProfessorNode.tscn" id="7_tkgw2"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_3w6k1"]
 a = Vector2(-46, -24)
@@ -27,12 +28,12 @@ position = Vector2(0, 32.92)
 collision_layer = 2
 
 [node name="GroundaryPolygon" type="CollisionPolygon2D" parent="GroundaryBody" unique_id=1372576707]
-position = Vector2(-4106, 469.08)
+position = Vector2(-4106, 501.07996)
 polygon = PackedVector2Array(11, 0, 1684, -10, 2648, -10, 2964, -8, 3234, -25.00003, 4188, -27.00003, 4273, -27.00003, 4347, -47, 4740, -52, 5755, -24.00003, 5782, -9.0000305, 5997, -6.0000305, 7241, -3, 8215, -13, 8207, 586, 3, 587, -2, -9)
 
 [node name="PlayerNode" parent="." unique_id=666628483 instance=ExtResource("2_165jb")]
 z_index = 4096
-position = Vector2(1396, 330)
+position = Vector2(-401.99997, 210.99998)
 scale = Vector2(0.2, 0.2)
 
 [node name="SchoolNode" parent="." unique_id=1460610188 instance=ExtResource("3_cthax")]
@@ -51,7 +52,7 @@ position = Vector2(-1670, 500)
 gravity_scale = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D2" unique_id=1880821649]
-polygon = PackedVector2Array(-321, 3, -211, -240, -122, -254, -155, -284, -127, -449, -145, -457, -145, -538, -36, -625, 103, -664, 157, -879, 178, -877, 203, -986, 426, -1082, 611, -1051, 594, -936, 569, -925, 527, -741, 476, -709, 370, -677, 409, -625, 435, -351, 450, -296, 459, -187, 456, -131, 510, 7, 389, 2, 101, 4)
+polygon = PackedVector2Array(-321, 3, -211, -240, -122, -254, -155, -284, -127, -449, -145, -457, -145, -538, -36, -625, 103, -664, 157, -879, 178, -877, 203, -986, 426, -1082, 611, -1051, 594, -936, 569, -925, 527, -741, 476, -709, 370, -677, 409, -625, 435, -351, 344, -287, 344, -162, 456, -131, 510, 7, 389, 2, 101, 4)
 
 [node name="RigidBody2D3" type="RigidBody2D" parent="." unique_id=653500645]
 position = Vector2(-2200, 503)
@@ -109,7 +110,10 @@ playback_type = 1
 [node name="UfoNode" parent="." unique_id=612834295 instance=ExtResource("5_mlkd7")]
 position = Vector2(1978, -40)
 
-[node name="SpeechBubbleSprite" type="Sprite2D" parent="." unique_id=1053859573]
-position = Vector2(1669.5, 98.499916)
-scale = Vector2(0.19662158, 0.19662158)
+[node name="SpeechBubbleSprite" type="Sprite2D" parent="." unique_id=647554930]
+z_index = 4096
+position = Vector2(1676.0001, 105.000015)
+scale = Vector2(0.2035473, 0.2035473)
 texture = ExtResource("3_tkgw2")
+
+[node name="ProfessorNode" parent="." unique_id=1106451242 instance=ExtResource("7_tkgw2")]

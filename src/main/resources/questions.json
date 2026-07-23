@@ -1,0 +1,25 @@
+[
+	{
+		"type": "static",
+		"question": "What is 2 + 2",
+		"answerProvider": {
+			"type": "static",
+			"answerType": "static",
+			"answers": [
+				"3",
+				"4",
+				"5",
+				"six!"
+			],
+			"correctAnswerIndex": 1
+		}
+	},
+	{
+		"type": "random",
+		"question": "What is ${1} * ${2}",
+		"answerProvider": {
+			"type": "randomWithChoices"
+		},
+		"operationProvider": "multiply"
+	}
+]
