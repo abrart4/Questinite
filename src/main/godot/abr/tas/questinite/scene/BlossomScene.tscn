@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bi5m81i635eq4" path="res://src/main/godot/abr/tas/questinite/node/player/PlayerNode.tscn" id="2_165jb"]
 [ext_resource type="PackedScene" uid="uid://dew8g5wld8xvo" path="res://src/main/godot/abr/tas/questinite/node/player/SchoolNode.tscn" id="3_cthax"]
 [ext_resource type="Texture2D" uid="uid://ds4m1rjuayqll" path="res://src/main/resources/assets/speech_bubble.png" id="3_tkgw2"]
+[ext_resource type="AudioStream" uid="uid://bgvv2bpp8q420" path="res://src/main/resources/assets/chill_music.wav" id="4_yj2y1"]
 [ext_resource type="PackedScene" uid="uid://bxa7to0m1lhak" path="res://src/main/godot/abr/tas/questinite/node/UfoNode.tscn" id="5_mlkd7"]
 [ext_resource type="Script" uid="uid://dcdj8henmnexq" path="res://src/main/godot/abr/tas/questinite/scene/QuestionLabel.gd" id="6_1tuva"]
 [ext_resource type="Script" uid="uid://c323sy6rsqyyr" path="res://src/main/godot/abr/tas/questinite/scene/Strength.gd" id="7_6ja7u"]
@@ -97,6 +98,7 @@ position = Vector2(0.097740166, -13.999659)
 shape = SubResource("WorldBoundaryShape2D_hugrs")
 
 [node name="BackgroundMusicManager" type="AudioStreamPlayer" parent="." unique_id=81177701]
+stream = ExtResource("4_yj2y1")
 autoplay = true
 playback_type = 1
 

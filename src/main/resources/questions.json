@@ -26,5 +26,19 @@
 			],
 			"correctAnswerIndex": 3
 		}
+	},
+	{
+		"type": "static",
+		"text": "What was not part of Dennis Morgan's essential 3 components of game design?",
+		"answerProvider": {
+			"answerType": "static",
+			"answers": [
+				"Mechanics",
+				"Dynamics",
+				"Aesthetics",
+				"Heuristics"
+			],
+			"correctAnswerIndex": 3
+		}
 	}
 ]
