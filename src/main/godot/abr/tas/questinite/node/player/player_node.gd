@@ -14,7 +14,3 @@ func win():
 	$PlayerBody/AnimatedSprite2D.play("victory_dance")
 	await Questinite.delay(5)
 	$"../ScreenLayer/ScreenControlRectangle".fadeOut()
-	
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("disable_delay"):
-		$"../ScreenLayer/ScreenControlRectangle".fadeOut()

@@ -37,6 +37,8 @@ distance = 55.0
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hugrs"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_5ix4j"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tvog6"]
 size = Vector2(85.5, 1180)
 
@@ -174,12 +176,16 @@ script = ExtResource("6_1tuva")
 metadata/_edit_use_anchors_ = true
 
 [node name="Strength" type="Label" parent="ScreenLayer" unique_id=1987024203]
-offset_left = -782.0
-offset_top = 555.0
-offset_right = -697.0
-offset_bottom = 578.0
+anchors_preset = -1
+anchor_right = 0.030208332
+anchor_bottom = 0.032407407
+offset_left = 21.0
+offset_top = 342.0
+offset_right = 106.0
+offset_bottom = 365.0
 text = "Strength: 1"
-horizontal_alignment = 2
+label_settings = SubResource("LabelSettings_5ix4j")
+vertical_alignment = 1
 script = ExtResource("7_6ja7u")
 metadata/_edit_use_anchors_ = true
 

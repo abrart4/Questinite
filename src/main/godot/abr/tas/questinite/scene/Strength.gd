@@ -3,7 +3,7 @@ extends Label
 var strength = 1
 
 func _ready():
-	add_theme_font_size_override("font_size", 24)
+	add_theme_font_size_override("font_size", 96)
 
 func increment():
 	strength = strength + 1
